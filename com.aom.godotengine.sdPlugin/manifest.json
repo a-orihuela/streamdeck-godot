@@ -1,4 +1,4 @@
-﻿{
+{
 	"Name": "Godot Engine Boost",
 	"Version": "0.1.0.0",
 	"Author": "Abraham OM",
@@ -16,6 +16,428 @@
 				{
 					"Image": "imgs/actions/counter/key",
 					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Play Scene",
+			"UUID": "com.aom.godotengine.hotkey-play-scene",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Reproduce la escena actual en el editor de Godot (F6).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Play"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Play Main Scene",
+			"UUID": "com.aom.godotengine.hotkey-play-main",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Ejecuta el proyecto desde la escena principal (F5).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Main"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Stop",
+			"UUID": "com.aom.godotengine.hotkey-stop-scene",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Detiene la reproduccion del juego (F8).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Stop"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Pause",
+			"UUID": "com.aom.godotengine.hotkey-pause-scene",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Pausa la ejecucion del juego en debug (F7).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Pause"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Toggle Breakpoint",
+			"UUID": "com.aom.godotengine.hotkey-toggle-breakpoint",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Activa o desactiva el breakpoint en la linea actual del script (F9).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Brkpt"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Step Over",
+			"UUID": "com.aom.godotengine.hotkey-step-over",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Paso por encima en el debugger (F10).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Over"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Step Into",
+			"UUID": "com.aom.godotengine.hotkey-step-into",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Paso dentro de una funcion en el debugger (F11).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Into"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Continue",
+			"UUID": "com.aom.godotengine.hotkey-continue-debug",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Continua la ejecucion tras un breakpoint (F12).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Cont"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Save Scene",
+			"UUID": "com.aom.godotengine.hotkey-save-scene",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Guarda la escena actual (Ctrl+S).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Save"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Save All",
+			"UUID": "com.aom.godotengine.hotkey-save-all-scenes",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Guarda todas las escenas abiertas (Ctrl+Shift+Alt+S).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Save All"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Quick Open Scene",
+			"UUID": "com.aom.godotengine.hotkey-quick-open-scene",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Busqueda rapida de escenas para abrir (Ctrl+Shift+O).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Scene"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Quick Open",
+			"UUID": "com.aom.godotengine.hotkey-quick-open",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Busqueda rapida de cualquier recurso o archivo (Shift+Alt+O).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Open"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Switch Workspace",
+			"UUID": "com.aom.godotengine.hotkey-switch-workspace",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Cambia entre los workspaces del editor (2D, 3D, Script, AssetLib). Configurable en ajustes.",
+			"PropertyInspectorPath": "ui/hotkey-switch-workspace.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "WS"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Command Palette",
+			"UUID": "com.aom.godotengine.hotkey-command-palette",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Abre la paleta de comandos del editor (Ctrl+Shift+P).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Cmd"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Distraction Free",
+			"UUID": "com.aom.godotengine.hotkey-distraction-free",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Activa el modo sin distracciones para maximizar el viewport (Ctrl+Shift+F11).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Focus"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Toggle Panel",
+			"UUID": "com.aom.godotengine.hotkey-toggle-last-panel",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Muestra u oculta el ultimo panel abierto (Ctrl+J).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Panel"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Undo",
+			"UUID": "com.aom.godotengine.hotkey-undo",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Deshace la ultima accion (Ctrl+Z).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Undo"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Redo",
+			"UUID": "com.aom.godotengine.hotkey-redo",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Rehace la ultima accion deshecha (Ctrl+Y).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Redo"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Duplicate Node",
+			"UUID": "com.aom.godotengine.hotkey-duplicate-node",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Duplica el nodo seleccionado en el arbol de escena (Ctrl+D).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Dup"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Toggle Comment",
+			"UUID": "com.aom.godotengine.hotkey-toggle-comment",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Comenta o descomenta la seleccion en el editor de scripts (Ctrl+K).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "#"
+				}
+			]
+		},
+		{
+			"Name": "Godot: Find in Files",
+			"UUID": "com.aom.godotengine.hotkey-find-in-files",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Abre la busqueda en todos los archivos del proyecto (Ctrl+Shift+F).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Find"
+				}
+			]
+		},
+		{
+			"Name": "Godot API: Play Scene",
+			"UUID": "com.aom.godotengine.api-play-scene",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Reproduce la escena actual via el plugin de Godot (requiere addon activo).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Play"
+				}
+			]
+		},
+		{
+			"Name": "Godot API: Play Main",
+			"UUID": "com.aom.godotengine.api-play-main",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Ejecuta el proyecto desde la escena principal via plugin (requiere addon activo).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Main"
+				}
+			]
+		},
+		{
+			"Name": "Godot API: Stop",
+			"UUID": "com.aom.godotengine.api-stop",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Detiene la reproduccion via plugin (requiere addon activo).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Stop"
+				}
+			]
+		},
+		{
+			"Name": "Godot API: Save Scene",
+			"UUID": "com.aom.godotengine.api-save-scene",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Guarda la escena actual via plugin (requiere addon activo).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Save"
+				}
+			]
+		},
+		{
+			"Name": "Godot API: Save All",
+			"UUID": "com.aom.godotengine.api-save-all",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Guarda todas las escenas abiertas via plugin (requiere addon activo).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Save All"
+				}
+			]
+		},
+		{
+			"Name": "Godot API: Open Scene",
+			"UUID": "com.aom.godotengine.api-open-scene",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Abre una escena especifica en el editor (configura la ruta en ajustes).",
+			"PropertyInspectorPath": "ui/godot-api-open-scene.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Open"
+				}
+			]
+		},
+		{
+			"Name": "Godot API: Reload Scene",
+			"UUID": "com.aom.godotengine.api-reload-scene",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Recarga la escena actual desde disco via plugin (requiere addon activo).",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"Title": "Reload"
 				}
 			]
 		}
@@ -42,6 +464,10 @@
 	"Nodejs": {
 		"Version": "24",
 		"Debug": "enabled"
+	},
+	"ApplicationsToMonitor": {
+		"mac": ["org.godotengine.godot4"],
+		"windows": ["Godot_v4.exe"]
 	},
 	"UUID": "com.aom.godotengine"
 }

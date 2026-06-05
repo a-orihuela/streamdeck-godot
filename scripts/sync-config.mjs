@@ -29,7 +29,10 @@ if (currentUUID === cfg.uuid) {
 // ── UUID changed — update all references ────────────────────────────────────
 console.log(`Syncing UUID: ${currentUUID} → ${cfg.uuid}`);
 
-/** Replace all occurrences of currentUUID with cfg.uuid in a file */
+/**
+ * Replace all occurrences of currentUUID with cfg.uuid in a file.
+ * @param {string} filePath - Absolute path to the file to update.
+ */
 function replaceInFile(filePath) {
 	if (!existsSync(filePath)) return;
 	const original = readFileSync(filePath, "utf8");
@@ -46,6 +49,10 @@ function replaceInFile(filePath) {
 
 // Update TypeScript source files
 const srcDir = join(root, "src");
+/**
+ * Recursively walks a directory and calls replaceInFile on every .ts file.
+ * @param {string} dir - Directory to walk.
+ */
 function walkAndReplace(dir) {
 	for (const entry of readdirSync(dir, { withFileTypes: true })) {
 		const full = join(dir, entry.name);
@@ -69,6 +76,7 @@ console.log(`  renamed: ${currentPluginDir} → ${cfg.uuid}.sdPlugin`);
 
 console.log("✓ UUID sync complete. Run 'npm run build' to recompile.");
 
+/** Updates name, author, description and version in manifest.json without changing UUIDs. */
 function syncManifestMeta() {
 	const manifestPath = join(root, `${currentPluginDir}/manifest.json`);
 	if (!existsSync(manifestPath)) return;
