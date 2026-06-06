@@ -1,5 +1,6 @@
-import streamDeck, { action, type KeyDownEvent, SingletonAction } from "@elgato/streamdeck";
+import streamDeck, { action, type KeyDownEvent, type WillAppearEvent, SingletonAction } from "@elgato/streamdeck";
 import { callGodotApi, type ApiSettings } from "./api-client";
+import { Icons } from "../../utils/icons";
 
 /** Settings for the Open Scene action. */
 type OpenSceneSettings = ApiSettings & {
@@ -24,5 +25,10 @@ export class ApiOpenScene extends SingletonAction<OpenSceneSettings> {
 		} catch {
 			await ev.action.showAlert();
 		}
+	}
+
+	/** @inheritdoc */
+	public override async onWillAppear(ev: WillAppearEvent<OpenSceneSettings>): Promise<void> {
+		await ev.action.setImage(Icons.OPEN_SCENE);
 	}
 }

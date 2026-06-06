@@ -1,9 +1,12 @@
 import streamDeck from "@elgato/streamdeck";
 
+const DEFAULT_HOST = "127.0.0.1";
 const DEFAULT_PORT = 9876;
 
 /** Settings shared by all Godot API actions. */
 export type ApiSettings = {
+	/** Hostname or IP of the machine running Godot (default: 127.0.0.1). */
+	host?: string;
 	/** HTTP port of the Godot bridge plugin (default: 9876). */
 	port?: number;
 };
@@ -35,8 +38,9 @@ export async function callGodotApi(
 	settings: ApiSettings,
 	body?: Record<string, string>
 ): Promise<void> {
+	const host = settings.host?.trim() || DEFAULT_HOST;
 	const port = settings.port ?? DEFAULT_PORT;
-	const url = `http://127.0.0.1:${port}${path}`;
+	const url = `http://${host}:${port}${path}`;
 
 	const controller = new AbortController();
 	const timeoutId = setTimeout(() => controller.abort(), 2000);

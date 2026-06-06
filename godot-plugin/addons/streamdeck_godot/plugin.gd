@@ -96,6 +96,19 @@ func _handle_request(peer: StreamPeerTCP, raw: String) -> void:
 			else:
 				_respond(peer, 400, '{"error":"Missing path in request body"}')
 
+		"/switch-workspace":
+			var body := _get_body(raw)
+			var data: Variant = JSON.parse_string(body)
+			if data is Dictionary and data.has("workspace"):
+				var ws := str(data["workspace"])
+				if ws in ["2D", "3D", "Script", "AssetLib"]:
+					EditorInterface.set_main_screen_editor(ws)
+					_respond(peer, 200, '{"status":"OK"}')
+				else:
+					_respond(peer, 400, '{"error":"Invalid workspace, use: 2D, 3D, Script, AssetLib"}')
+			else:
+				_respond(peer, 400, '{"error":"Missing workspace in request body"}')
+
 		"/status":
 			var playing := EditorInterface.is_playing_scene()
 			var scene := ""
