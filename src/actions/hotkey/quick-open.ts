@@ -1,14 +1,18 @@
 import streamDeck, { action, type KeyDownEvent, type WillAppearEvent, SingletonAction } from "@elgato/streamdeck";
 import { sendKeys, GodotKeys } from "../../utils/send-keys";
+import { parseKeyCombo, type HotkeySettings } from "../../utils/parse-key-combo";
 import { Icons } from "../../utils/icons";
 
 /** Sends the Quick Open resource hotkey (Shift+Alt+O) to the Godot editor. */
 @action({ UUID: "com.aom.godotengine.hotkey-quick-open" })
-export class HotkeyQuickOpen extends SingletonAction {
+export class HotkeyQuickOpen extends SingletonAction<HotkeySettings> {
 	/** @inheritdoc */
-	public override async onKeyDown(ev: KeyDownEvent): Promise<void> {
+	public override async onKeyDown(ev: KeyDownEvent<HotkeySettings>): Promise<void> {
+		const keys = ev.payload.settings.keyCombo
+			? parseKeyCombo(ev.payload.settings.keyCombo)
+			: GodotKeys.QUICK_OPEN;
 		try {
-			await sendKeys(GodotKeys.QUICK_OPEN);
+			await sendKeys(keys);
 		} catch (error) {
 			streamDeck.logger.error("HotkeyQuickOpen failed:", error);
 			await ev.action.showAlert();
@@ -16,7 +20,7 @@ export class HotkeyQuickOpen extends SingletonAction {
 	}
 
 	/** @inheritdoc */
-	public override async onWillAppear(ev: WillAppearEvent): Promise<void> {
+	public override async onWillAppear(ev: WillAppearEvent<HotkeySettings>): Promise<void> {
 		await ev.action.setImage(Icons.QUICK_OPEN);
 	}
 }

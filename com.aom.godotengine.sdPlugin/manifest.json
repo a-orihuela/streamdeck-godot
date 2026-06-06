@@ -136,6 +136,7 @@
 			"UUID": "com.aom.godotengine.hotkey-pause-scene",
 			"Icon": "imgs/actions/pause/icon",
 			"Tooltip": "Pausa la ejecucion del juego en debug (F7).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -151,6 +152,7 @@
 			"UUID": "com.aom.godotengine.hotkey-toggle-breakpoint",
 			"Icon": "imgs/actions/breakpoint/icon",
 			"Tooltip": "Activa o desactiva el breakpoint en la linea actual del script (F9).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -166,6 +168,7 @@
 			"UUID": "com.aom.godotengine.hotkey-step-over",
 			"Icon": "imgs/actions/step-over/icon",
 			"Tooltip": "Paso por encima en el debugger (F10).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -181,6 +184,7 @@
 			"UUID": "com.aom.godotengine.hotkey-step-into",
 			"Icon": "imgs/actions/step-into/icon",
 			"Tooltip": "Paso dentro de una funcion en el debugger (F11).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -196,6 +200,7 @@
 			"UUID": "com.aom.godotengine.hotkey-continue-debug",
 			"Icon": "imgs/actions/continue/icon",
 			"Tooltip": "Continua la ejecucion tras un breakpoint (F12).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -211,6 +216,7 @@
 			"UUID": "com.aom.godotengine.hotkey-quick-open-scene",
 			"Icon": "imgs/actions/quick-open-scene/icon",
 			"Tooltip": "Busqueda rapida de escenas para abrir (Ctrl+Shift+O).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -226,6 +232,7 @@
 			"UUID": "com.aom.godotengine.hotkey-quick-open",
 			"Icon": "imgs/actions/quick-open/icon",
 			"Tooltip": "Busqueda rapida de cualquier recurso o archivo (Shift+Alt+O).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -241,6 +248,7 @@
 			"UUID": "com.aom.godotengine.hotkey-command-palette",
 			"Icon": "imgs/actions/cmd-palette/icon",
 			"Tooltip": "Abre la paleta de comandos del editor (Ctrl+Shift+P).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -256,6 +264,7 @@
 			"UUID": "com.aom.godotengine.hotkey-distraction-free",
 			"Icon": "imgs/actions/distraction-free/icon",
 			"Tooltip": "Activa el modo sin distracciones para maximizar el viewport (Ctrl+Shift+F11).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -271,6 +280,7 @@
 			"UUID": "com.aom.godotengine.hotkey-toggle-last-panel",
 			"Icon": "imgs/actions/panel/icon",
 			"Tooltip": "Muestra u oculta el ultimo panel abierto (Ctrl+J).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -286,6 +296,7 @@
 			"UUID": "com.aom.godotengine.hotkey-undo",
 			"Icon": "imgs/actions/undo/icon",
 			"Tooltip": "Deshace la ultima accion (Ctrl+Z).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -301,6 +312,7 @@
 			"UUID": "com.aom.godotengine.hotkey-redo",
 			"Icon": "imgs/actions/redo/icon",
 			"Tooltip": "Rehace la ultima accion deshecha (Ctrl+Y).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -316,6 +328,7 @@
 			"UUID": "com.aom.godotengine.hotkey-duplicate-node",
 			"Icon": "imgs/actions/duplicate/icon",
 			"Tooltip": "Duplica el nodo seleccionado en el arbol de escena (Ctrl+D).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -331,6 +344,7 @@
 			"UUID": "com.aom.godotengine.hotkey-toggle-comment",
 			"Icon": "imgs/actions/comment/icon",
 			"Tooltip": "Comenta o descomenta la seleccion en el editor de scripts (Ctrl+K).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -346,6 +360,7 @@
 			"UUID": "com.aom.godotengine.hotkey-find-in-files",
 			"Icon": "imgs/actions/find/icon",
 			"Tooltip": "Abre la busqueda en todos los archivos del proyecto (Ctrl+Shift+F).",
+			"PropertyInspectorPath": "ui/hotkey-settings.html",
 			"Controllers": [
 				"Keypad"
 			],
@@ -381,8 +396,12 @@
 		"Debug": "enabled"
 	},
 	"ApplicationsToMonitor": {
-		"mac": ["org.godotengine.godot4"],
-		"windows": ["Godot_v4.exe"]
+		"mac": [
+			"org.godotengine.godot4"
+		],
+		"windows": [
+			"Godot_v4.exe"
+		]
 	},
 	"UUID": "com.aom.godotengine"
 }

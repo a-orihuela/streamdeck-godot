@@ -1,14 +1,18 @@
 import streamDeck, { action, type KeyDownEvent, type WillAppearEvent, SingletonAction } from "@elgato/streamdeck";
 import { sendKeys, GodotKeys } from "../../utils/send-keys";
+import { parseKeyCombo, type HotkeySettings } from "../../utils/parse-key-combo";
 import { Icons } from "../../utils/icons";
 
 /** Sends the Toggle Comment hotkey (Ctrl+K) to the Godot script editor. */
 @action({ UUID: "com.aom.godotengine.hotkey-toggle-comment" })
-export class HotkeyToggleComment extends SingletonAction {
+export class HotkeyToggleComment extends SingletonAction<HotkeySettings> {
 	/** @inheritdoc */
-	public override async onKeyDown(ev: KeyDownEvent): Promise<void> {
+	public override async onKeyDown(ev: KeyDownEvent<HotkeySettings>): Promise<void> {
+		const keys = ev.payload.settings.keyCombo
+			? parseKeyCombo(ev.payload.settings.keyCombo)
+			: GodotKeys.TOGGLE_COMMENT;
 		try {
-			await sendKeys(GodotKeys.TOGGLE_COMMENT);
+			await sendKeys(keys);
 		} catch (error) {
 			streamDeck.logger.error("HotkeyToggleComment failed:", error);
 			await ev.action.showAlert();
@@ -16,7 +20,7 @@ export class HotkeyToggleComment extends SingletonAction {
 	}
 
 	/** @inheritdoc */
-	public override async onWillAppear(ev: WillAppearEvent): Promise<void> {
+	public override async onWillAppear(ev: WillAppearEvent<HotkeySettings>): Promise<void> {
 		await ev.action.setImage(Icons.COMMENT);
 	}
 }

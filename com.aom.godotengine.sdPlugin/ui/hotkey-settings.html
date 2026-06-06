@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <title>Hotkey Settings</title>
+    <meta charset="utf-8" />
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: #1d1d1d;
+            color: #c8c8c8;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 9pt;
+            padding: 12px 14px;
+        }
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 8px;
+        }
+        .label {
+            flex: 0 0 90px;
+            color: #9d9d9d;
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        #display {
+            flex: 1;
+            background: #0d0d0d;
+            border: 1px solid #3d3d3d;
+            border-radius: 3px;
+            padding: 5px 10px;
+            font-size: 10pt;
+            font-family: monospace;
+            text-align: center;
+            color: #666;
+            min-height: 26px;
+            line-height: 16px;
+            user-select: none;
+        }
+        #display.has-value { color: #c8c8c8; }
+        #display.recording {
+            border-color: #478CBF;
+            color: #478CBF;
+            animation: pulse 1s ease-in-out infinite;
+        }
+        @keyframes pulse { 50% { opacity: 0.55; } }
+        button {
+            flex: 1;
+            background: #333;
+            border: none;
+            border-radius: 3px;
+            color: #c8c8c8;
+            cursor: pointer;
+            font-size: 8pt;
+            padding: 5px 8px;
+            min-height: 26px;
+            transition: background 0.1s;
+        }
+        button:hover { background: #444; }
+        button:active { background: #222; }
+        #btn-record { background: #1e3348; color: #7ab3d4; }
+        #btn-record:hover { background: #254060; }
+        #btn-record.active { background: #478CBF; color: #fff; }
+        .hint {
+            color: #555;
+            font-size: 7.5pt;
+            margin-top: 4px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <span class="label">Atajo</span>
+        <span id="display">Default</span>
+    </div>
+    <div class="row">
+        <button id="btn-record">⏺ Capturar combo</button>
+        <button id="btn-reset">✕ Usar default</button>
+    </div>
+    <p class="hint">Pulsa Escape para cancelar la captura.</p>
+
+    <script>
+        var socket, context, settings = {};
+        var recording = false;
+
+        var display   = document.getElementById('display');
+        var btnRecord = document.getElementById('btn-record');
+        var btnReset  = document.getElementById('btn-reset');
+
+        function updateDisplay(keyCombo) {
+            if (keyCombo) {
+                display.textContent = keyCombo;
+                display.classList.add('has-value');
+            } else {
+                display.textContent = 'Default';
+                display.classList.remove('has-value');
+            }
+        }
+
+        function saveSettings() {
+            if (!socket) return;
+            socket.send(JSON.stringify({ event: 'setSettings', context: context, payload: settings }));
+        }
+
+        function startRecording() {
+            recording = true;
+            display.textContent = 'Pulsa el atajo...';
+            display.classList.remove('has-value');
+            display.classList.add('recording');
+            btnRecord.classList.add('active');
+            btnRecord.textContent = '● Esperando...';
+        }
+
+        function stopRecording() {
+            recording = false;
+            display.classList.remove('recording');
+            btnRecord.classList.remove('active');
+            btnRecord.textContent = '⏺ Capturar combo';
+        }
+
+        btnRecord.addEventListener('click', function () {
+            if (recording) {
+                stopRecording();
+                updateDisplay(settings.keyCombo);
+            } else {
+                startRecording();
+            }
+        });
+
+        btnReset.addEventListener('click', function () {
+            stopRecording();
+            delete settings.keyCombo;
+            saveSettings();
+            updateDisplay(null);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (!recording) return;
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (e.key === 'Escape') {
+                stopRecording();
+                updateDisplay(settings.keyCombo);
+                return;
+            }
+
+            if (['Control', 'Shift', 'Alt', 'Meta'].includes(e.key)) return;
+
+            var parts = [];
+            if (e.ctrlKey)  parts.push('Ctrl');
+            if (e.shiftKey) parts.push('Shift');
+            if (e.altKey)   parts.push('Alt');
+
+            var key = e.key.length === 1 ? e.key.toUpperCase() : e.key;
+            parts.push(key);
+
+            var combo = parts.join('+');
+            settings.keyCombo = combo;
+            saveSettings();
+            stopRecording();
+            updateDisplay(combo);
+        });
+
+        function connectElgatoStreamDeckSocket(inPort, inUUID, inRegisterEvent, inInfo, inActionInfo) {
+            context = inUUID;
+            var info = JSON.parse(inActionInfo);
+            settings = (info.payload && info.payload.settings) ? info.payload.settings : {};
+            updateDisplay(settings.keyCombo);
+
+            socket = new WebSocket('ws://127.0.0.1:' + inPort);
+            socket.onopen = function () {
+                socket.send(JSON.stringify({ event: inRegisterEvent, uuid: context }));
+            };
+            socket.onmessage = function (evt) {
+                var data = JSON.parse(evt.data);
+                if (data.event === 'didReceiveSettings') {
+                    settings = (data.payload && data.payload.settings) ? data.payload.settings : {};
+                    updateDisplay(settings.keyCombo);
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>
