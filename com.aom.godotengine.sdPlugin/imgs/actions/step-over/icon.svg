@@ -1,1 +1,92 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><path d="M14,36 h44" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polygon points="46,24 60,36 46,48" fill="#FFFFFF"/><path d="M24,26 a12,12 0 0 1 24,0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="4,3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 72 72"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect7"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect6"
+       is_visible="true"
+       lpeversion="1" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="7.994235"
+     inkscape:cx="36.463777"
+     inkscape:cy="37.527043"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <g
+     id="g8"
+     transform="translate(-0.48399803,-1.7312036)">
+    <circle
+       style="fill:none;stroke:#ff0000;stroke-width:1.35002;stroke-opacity:1"
+       id="path3"
+       cx="31.723501"
+       cy="17.863548"
+       r="9.456933"
+       transform="rotate(19.131839)" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-dasharray:2, 4;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Triangle)"
+       d="m 22.391136,12.133744 c -2.714887,-4.1820336 -3.14504,-9.7537337 -1.104233,-14.3029225 2.040808,-4.5491888 6.488354,-7.9327085 11.417146,-8.6857185 4.928792,-0.75301 10.183726,1.1481865 13.489762,4.8804964 3.306037,3.7323098 4.559139,9.1782817 3.216796,13.9801698 -0.522109,1.8677113 -1.403165,3.6232648 -1.876353,5.5039658 -0.897255,3.566168 -0.218701,7.499142 1.821649,10.558487 2.04035,3.059345 5.410566,5.197185 9.047705,5.739259 3.637139,0.542073 7.484281,-0.520102 10.328062,-2.851524 2.843782,-2.331421 4.6397,-5.895604 4.821334,-9.568427"
+       id="path7"
+       inkscape:path-effect="#path-effect7"
+       inkscape:original-d="m 22.391136,12.133744 c 9.25667,-1.292598 18.01298,-2.7102866 27.019471,-4.1279748 9.00649,-1.4176883 -1.125812,3.5859178 -1.876353,5.5039658 -0.75054,1.918049 17.304137,2.66859 26.01875,3.877795"
+       transform="rotate(19.131839,-43.336326,-16.916562)" />
+    <circle
+       style="fill:#ffffff;stroke:none;stroke-width:2;stroke-linecap:round;stroke-dasharray:2, 4;stroke-dashoffset:0;stroke-opacity:1"
+       id="path8"
+       cx="69.839417"
+       cy="17.863548"
+       r="4.9410605"
+       transform="rotate(19.131839)" />
+  </g>
+</svg>

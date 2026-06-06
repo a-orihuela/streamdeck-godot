@@ -1,1 +1,81 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72"><rect x="14" y="8" width="34" height="44" rx="4" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14,38 h20 l8,14" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><polygon points="34,46 50,60 50,44" fill="#FFFFFF"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 72 72"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="7.994235"
+     inkscape:cx="37.214318"
+     inkscape:cy="34.64997"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <g
+     id="g3"
+     transform="translate(0.00216543,-4.970396)">
+    <g
+       id="g1">
+      <g
+         id="g2"
+         transform="translate(-0.00216343,-0.85771702)">
+        <path
+           d="m 12,28 h 48 v 28 a 4,4 0 0 1 -4,4 H 16 a 4,4 0 0 1 -4,-4 z"
+           fill="none"
+           stroke="#ffffff"
+           stroke-width="4"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="path1" />
+        <path
+           d="M 10.511106,29.488894 H 24.212031 V 23.082531 A 1.1417439,0.9151947 0 0 0 23.070287,22.167336 H 11.65285 a 1.1417439,0.9151947 0 0 0 -1.141744,0.915195 z"
+           fill="none"
+           stroke="#ffffff"
+           stroke-width="1.02222"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="path1-9" />
+      </g>
+      <g
+         id="g2-4"
+         transform="matrix(0.81118469,0,0,0.81118469,10.982157,12.979775)">
+        <circle
+           cx="28.088451"
+           cy="34.142506"
+           r="9"
+           fill="none"
+           stroke="#ffffff"
+           stroke-width="3"
+           id="circle1" />
+        <line
+           x1="34.088451"
+           y1="40.142506"
+           x2="42.088451"
+           y2="48.142506"
+           stroke="#ffffff"
+           stroke-width="4"
+           stroke-linecap="round"
+           stroke-linejoin="round"
+           id="line2" />
+      </g>
+    </g>
+  </g>
+</svg>

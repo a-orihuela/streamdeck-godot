@@ -1,6 +1,6 @@
 {
 	"Name": "Godot Engine Boost",
-	"Version": "0.1.0.0",
+	"Version": "1.0.0.0",
 	"Author": "Abraham OM",
 	"Actions": [
 		{
@@ -14,7 +14,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/play/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -30,7 +30,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/play/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -46,7 +46,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/stop/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -62,7 +62,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/save/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -78,7 +78,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/save-all/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -94,7 +94,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/open-scene/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -110,7 +110,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/reload/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -126,7 +126,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/workspace/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -142,7 +142,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/pause/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -158,7 +158,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/breakpoint/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -174,7 +174,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/step-over/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -190,7 +190,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/step-into/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -206,7 +206,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/continue/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -222,7 +222,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/quick-open-scene/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -238,7 +238,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/quick-open/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -254,7 +254,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/cmd-palette/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -270,7 +270,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/distraction-free/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -286,7 +286,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/panel/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -302,7 +302,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/undo/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -318,7 +318,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/redo/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -334,7 +334,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/duplicate/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -350,7 +350,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/comment/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
@@ -366,7 +366,7 @@
 			],
 			"States": [
 				{
-					"Image": "imgs/actions/find/key",
+					"Image": "imgs/actions/placeholder",
 					"Title": ""
 				}
 			]
