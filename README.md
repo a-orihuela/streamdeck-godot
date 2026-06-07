@@ -1,87 +1,106 @@
-# streamdeck-dev-template
+# Godot Engine Boost — Stream Deck Plugin
 
-Plantilla para desarrollar plugins, profiles e icon packs de Stream Deck con GitHub Copilot.
+A Stream Deck plugin that connects directly to the Godot 4.x editor, letting you trigger editor actions from your Stream Deck with real-time visual feedback.
 
-El template incluye la **documentación oficial de Elgato completa** (extraída de docs.elgato.com) y scaffolds listos para los tres tipos de proyecto. El script `init` pregunta qué quieres crear, lo personaliza con tus datos y elimina todo lo que no necesitas.
+Two components work together:
 
-## Uso
+- **Stream Deck plugin** — installs in the Stream Deck app
+- **Godot addon** — a lightweight HTTP bridge that runs inside the Godot editor
 
-```powershell
-# Windows
-.\init.ps1
-```
+Both are available in the [latest release](https://github.com/a-orihuela/streamdeck-godot/releases/latest).
 
-```bash
-# macOS / Linux
-chmod +x init.sh && ./init.sh
-```
+## Requirements
 
-El wizard pregunta qué quieres crear (puedes elegir varios):
+- Stream Deck app 7.1 or later
+- Godot Engine 4.x
+- Windows 10+ or macOS 12+
 
-```
-  ¿Qué quieres crear? (escribe los números separados por coma)
-    1) Plugin
-    2) Profile
-    3) Icon Pack
-```
+## Installation
 
-Tras responder las preguntas para cada tipo seleccionado, el script:
-1. Copia el scaffold correspondiente al root del proyecto
-2. Reemplaza los placeholders con tus datos
-3. Elimina los scaffolds no usados y el propio `init`
-4. Ejecuta `npm install` si incluye un plugin
+### 1. Stream Deck plugin
 
-## Flujo de trabajo por tipo
+Install directly from the [Elgato Marketplace](https://marketplace.elgato.com/product/godot-engine-boost-PLACEHOLDER), or download `com.aom.godotengine.streamDeckPlugin` from the [latest release](https://github.com/a-orihuela/streamdeck-godot/releases/latest) and double-click to install.
 
-### Plugin
+### 2. Godot addon
 
-```bash
-npm run watch                          # compilar y recargar en vivo
-streamdeck validate {uuid}.sdPlugin    # validar manifest
-streamdeck pack                        # empaquetar para distribución
-```
+The addon is required for API actions (play, stop, save, etc.). Hotkey actions work without it.
 
-### Profile
+1. Download `streamdeck-godot-addon.zip` from the [latest release](https://github.com/a-orihuela/streamdeck-godot/releases/latest)
+2. Extract the `addons/` folder into your Godot project root
+3. In Godot: **Project → Project Settings → Plugins** → enable **Stream Deck Godot**
 
-Edita el archivo `.streamDeckProfile` con la app de Stream Deck (importa, edita, exporta).
+The addon starts a local HTTP server on `127.0.0.1:9876` that the Stream Deck plugin connects to.
 
-### Icon Pack
+## Actions
 
-Añade iconos (144×144 px) a `icons/` y usa [Icon Pack Man](https://iconpackman.elgato.com/) para generar el `.streamDeckIconPack`.
+### API actions — require the Godot addon
 
-## Estructura del template (antes de init)
-
-```
-streamdeck-dev-template/
-├── scaffold/
-│   ├── plugin/                  ← plugin scaffold (TypeScript + manifest + assets)
-│   ├── profile/                 ← profile scaffold (.streamDeckProfile)
-│   └── icons/                   ← icon pack scaffold (manifest.json, icons.json, icons/)
-├── docs/                        ← documentación local de Elgato
-│   ├── sdk/                     ← introduction, guides, references, cli, style-guide
-│   ├── profiles.md
-│   └── icons.md
-├── .github/
-│   ├── copilot-instructions.md  ← contexto y reglas para Copilot
-│   └── prompts/
-│       ├── create-plugin.prompt.md
-│       ├── create-profile.prompt.md
-│       └── create-icons.prompt.md
-├── init.ps1 / init.sh           ← wizard de configuración (se auto-elimina al ejecutar)
-├── .gitignore
-└── README.md
-```
-
-## Copilot: prompts disponibles
-
-| Tarea | Prompt |
+| Action | Description |
 |---|---|
-| Añadir una nueva acción al plugin | `.github/prompts/create-plugin.prompt.md` |
-| Crear un profile | `.github/prompts/create-profile.prompt.md` |
-| Crear iconos | `.github/prompts/create-icons.prompt.md` |
+| **Play Scene** | Plays the current scene. Icon turns green while the game is running. |
+| **Play Main Scene** | Runs the project from the main scene. Icon turns green while running. |
+| **Stop** | Stops the running scene. |
+| **Save Scene** | Saves the current scene. |
+| **Save All** | Saves all open scenes. |
+| **Open Scene** | Opens a specific scene by path (configure the path in the action settings). |
+| **Reload Scene** | Reloads the current scene from disk. |
+| **Switch Workspace** | Switches the editor workspace: 2D, 3D, Script, or AssetLib. |
 
-## Requisitos
+### Hotkey actions — no addon required
 
-- Node.js 24+ (solo para plugins)
-- Stream Deck 7.1+ (solo para plugins)
-- Stream Deck CLI: `npm install -g @elgato/cli@latest` (solo para plugins)
+These actions send keyboard shortcuts to the Godot editor window. Each action lets you configure a custom key combo if you've changed the default shortcuts in Godot's editor settings.
+
+| Action | Default shortcut |
+|---|---|
+| **Pause** | F7 |
+| **Toggle Breakpoint** | F9 |
+| **Step Over** | F10 |
+| **Step Into** | F11 |
+| **Continue** | F12 |
+| **Quick Open Scene** | Ctrl+Shift+O |
+| **Quick Open** | Shift+Alt+O |
+| **Command Palette** | Ctrl+Shift+P |
+| **Distraction Free** | Ctrl+Shift+F11 |
+| **Toggle Panel** | Ctrl+J |
+| **Undo** | Ctrl+Z |
+| **Redo** | Ctrl+Y |
+| **Duplicate Node** | Ctrl+D |
+| **Toggle Comment** | Ctrl+K |
+| **Find in Files** | Ctrl+Shift+F |
+
+### Custom hotkeys
+
+If you've changed a shortcut in Godot's editor settings, click the action in Stream Deck, press **Capture combo**, then press your key combination. The action uses that combo from then on.
+
+## Configuration
+
+API actions share a connection configuration:
+
+| Setting | Default | Description |
+|---|---|---|
+| Host | `127.0.0.1` | Address where the Godot addon is running |
+| Port | `9876` | Port the addon listens on |
+
+These only need to change if you have a port conflict or a non-standard setup.
+
+## Development
+
+```bash
+npm install
+npm run watch          # compile and reload on change
+npx streamdeck validate com.aom.godotengine.sdPlugin
+npx streamdeck pack com.aom.godotengine.sdPlugin
+```
+
+To publish a new release, push a version tag:
+
+```bash
+git tag v1.0.0.0
+git push origin v1.0.0.0
+```
+
+GitHub Actions will build, validate, pack and attach both the Stream Deck plugin and the Godot addon zip to the release automatically.
+
+## License
+
+MIT

@@ -75,14 +75,14 @@
 
 <body>
     <div class="row">
-        <span class="label">Atajo</span>
+        <span class="label">Shortcut</span>
         <span id="display">Default</span>
     </div>
     <div class="row">
-        <button id="btn-record">⏺ Capturar combo</button>
-        <button id="btn-reset">✕ Usar default</button>
+        <button id="btn-record">⏺ Capture combo</button>
+        <button id="btn-reset">✕ Use default</button>
     </div>
-    <p class="hint">Pulsa Escape para cancelar la captura.</p>
+    <p class="hint">Press Escape to cancel.</p>
 
     <script>
         var socket, context, settings = {};
@@ -109,18 +109,18 @@
 
         function startRecording() {
             recording = true;
-            display.textContent = 'Pulsa el atajo...';
+            display.textContent = 'Press the shortcut...';
             display.classList.remove('has-value');
             display.classList.add('recording');
             btnRecord.classList.add('active');
-            btnRecord.textContent = '● Esperando...';
+            btnRecord.textContent = '● Waiting...';
         }
 
         function stopRecording() {
             recording = false;
             display.classList.remove('recording');
             btnRecord.classList.remove('active');
-            btnRecord.textContent = '⏺ Capturar combo';
+            btnRecord.textContent = '⏺ Capture combo';
         }
 
         btnRecord.addEventListener('click', function () {

@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Build and publish release
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Stream Deck CLI
+        run: npm install -g @elgato/cli@latest
+
+      - name: Validate plugin
+        run: streamdeck validate *.sdPlugin
+
+      - name: Pack plugin
+        run: streamdeck pack *.sdPlugin
+
+      - name: Package Godot addon
+        run: |
+          cd godot-plugin
+          zip -r ../streamdeck-godot-addon.zip addons/
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            *.streamDeckPlugin
+            streamdeck-godot-addon.zip
+          generate_release_notes: true

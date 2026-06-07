@@ -5,6 +5,7 @@ import typescript from "@rollup/plugin-typescript";
 import path from "node:path";
 import url from "node:url";
 import { createRequire } from "node:module";
+import { readFileSync } from "node:fs";
 
 const { uuid } = createRequire(import.meta.url)("./project.config.json");
 const isWatching = !!process.env.ROLLUP_WATCH;
@@ -23,6 +24,20 @@ const config = {
 		}
 	},
 	plugins: [
+		{
+			name: "inline-svg",
+			resolveId(source, importer) {
+				if (!source.endsWith(".svg")) return null;
+				return path.resolve(path.dirname(importer), source);
+			},
+			load(id) {
+				if (!id.endsWith(".svg")) return null;
+				const content = readFileSync(id, "utf8").trim();
+				const base64 = Buffer.from(content).toString("base64");
+				const dataUri = `data:image/svg+xml;base64,${base64}`;
+				return `export default ${JSON.stringify(dataUri)};`;
+			},
+		},
 		{
 			name: "watch-externals",
 			buildStart: function () {
